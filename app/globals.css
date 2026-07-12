@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f3f1ee;
+  --paper: rgba(255, 255, 255, 0.76);
+  --paper-solid: #ffffff;
+  --foreground: #101010;
+  --muted: #6f6f6f;
+  --border: rgba(16, 16, 16, 0.08);
+  --accent: #e84133;
+  --accent-soft: rgba(232, 65, 51, 0.1);
+  --shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.88), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(232, 65, 51, 0.06), transparent 22%),
+    linear-gradient(180deg, #f7f5f2 0%, #efedea 100%);
+  color: var(--foreground);
+  font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.shell {
+  @apply mx-auto max-w-[1500px] px-4 py-5 md:px-6;
+}
+
+.panel {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(22px);
+}
+
+.soft-card {
+  @apply rounded-[32px] border p-6;
+  border-color: var(--border);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.hero-card {
+  @apply rounded-[40px] border;
+  border-color: rgba(16, 16, 16, 0.06);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.82));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.08);
+}
+
+.eyebrow {
+  color: var(--muted);
+  @apply text-[11px] font-medium uppercase tracking-[0.28em];
+}
+
+.display {
+  @apply text-[3rem] font-semibold leading-[0.9] tracking-[-0.06em] text-black md:text-[5.4rem];
+}
+
+.section-title {
+  @apply text-[2rem] font-semibold tracking-[-0.05em] text-black md:text-[2.75rem];
+}
+
+.body-muted {
+  color: var(--muted);
+  @apply text-sm leading-7 md:text-[15px];
+}
+
+.pill {
+  @apply inline-flex items-center rounded-full px-4 py-2 text-xs font-medium;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(16, 16, 16, 0.08);
+}
+
+.pill-accent {
+  @apply inline-flex items-center rounded-full px-4 py-2 text-xs font-semibold;
+  color: white;
+  background: var(--accent);
+}
+
+.button-dark {
+  @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-white transition;
+  background: #111111;
+}
+
+.button-dark:hover {
+  transform: translateY(-1px);
+}
+
+.button-light {
+  @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium transition;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(16, 16, 16, 0.08);
+}
+
+.button-accent {
+  @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-white transition;
+  background: var(--accent);
+}
+
+.grid-lines {
+  background-image:
+    linear-gradient(rgba(16, 16, 16, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 16, 16, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.node-active {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 1px rgba(232, 65, 51, 0.5), 0 0 0 14px rgba(247, 203, 73, 0.22);
+  animation: pulse-border 2.8s ease-in-out infinite;
+}
+
+.node-complete {
+  border-color: rgba(16, 16, 16, 0.14) !important;
+}
+
+.node-upcoming {
+  border-color: rgba(16, 16, 16, 0.08) !important;
+  color: var(--muted);
+}
+
+@keyframes pulse-border {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(232, 65, 51, 0.5), 0 0 0 8px rgba(247, 203, 73, 0.18); }
+  50% { box-shadow: 0 0 0 1px rgba(232, 65, 51, 0.65), 0 0 0 18px rgba(247, 203, 73, 0.3); }
+}
