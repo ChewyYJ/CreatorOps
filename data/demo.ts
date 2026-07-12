@@ -437,3 +437,129 @@ export const settingsGroups = [
     fields: ["Preferred sources", "Research depth"]
   }
 ];
+
+export const customerDashboard = {
+  summary: [
+    { label: "Active customers", value: "128", change: "+18 this month", tone: "positive" },
+    { label: "Paying subscribers", value: "84", change: "66% conversion", tone: "positive" },
+    { label: "Monthly recurring revenue", value: "SGD 2.9k", change: "+24% MoM", tone: "positive" },
+    { label: "At-risk creators", value: "9", change: "Low activity", tone: "warning" }
+  ],
+  funnel: [
+    { stage: "Visitors", count: 1840, percent: 100 },
+    { stage: "Trials started", count: 312, percent: 17 },
+    { stage: "Activated creators", count: 146, percent: 47 },
+    { stage: "Paid customers", count: 84, percent: 58 }
+  ],
+  segments: [
+    { label: "Student creators", count: 52, note: "Most active after 7 PM" },
+    { label: "Part-time freelancers", count: 44, note: "Highest approval completion" },
+    { label: "Full-time creators", count: 21, note: "Highest project volume" },
+    { label: "Agencies / teams", count: 11, note: "Needs collaboration features" }
+  ],
+  activity: [
+    { label: "Projects managed", value: 376, helper: "Across all creators" },
+    { label: "Approvals completed", value: 921, helper: "Emails, scripts, invoices" },
+    { label: "AI tasks executed", value: "4.8k", helper: "Research, drafts, reminders" },
+    { label: "Avg. time saved", value: "6.4h", helper: "Per creator / week" }
+  ],
+  customers: [
+    {
+      name: "Jamie Tan",
+      plan: "Creator Pro",
+      status: "Healthy",
+      projects: 8,
+      approvals: 24,
+      lastActive: "Today",
+      usage: 86,
+      note: "Using AI Workforce daily for skincare UGC briefs."
+    },
+    {
+      name: "Alyssa Koh",
+      plan: "Starter",
+      status: "Growing",
+      projects: 3,
+      approvals: 9,
+      lastActive: "Today",
+      usage: 62,
+      note: "Needs help setting pricing preferences."
+    },
+    {
+      name: "Maya Lim",
+      plan: "Creator Pro",
+      status: "Healthy",
+      projects: 11,
+      approvals: 37,
+      lastActive: "Yesterday",
+      usage: 91,
+      note: "High usage across research and creative approvals."
+    },
+    {
+      name: "Rae Ng",
+      plan: "Trial",
+      status: "At risk",
+      projects: 1,
+      approvals: 2,
+      lastActive: "6 days ago",
+      usage: 18,
+      note: "Has not completed setup; trigger onboarding support."
+    }
+  ],
+  revenue: [
+    { month: "Mar", revenue: "SGD 820", customers: 25 },
+    { month: "Apr", revenue: "SGD 1.3k", customers: 41 },
+    { month: "May", revenue: "SGD 1.9k", customers: 59 },
+    { month: "Jun", revenue: "SGD 2.4k", customers: 72 },
+    { month: "Jul", revenue: "SGD 2.9k", customers: 84 }
+  ],
+  ownerNodes: [
+    {
+      name: "Marketing Agent",
+      state: "active",
+      metric: "42 posts scheduled",
+      description: "Advocates for CreatorOps AI across Instagram, TikTok, and LinkedIn to attract content creators as customers.",
+      fakeData: "18.4k reach · 612 profile visits · 94 waitlist clicks",
+      next: "Signup Flow"
+    },
+    {
+      name: "Signup Flow",
+      state: "active",
+      metric: "312 trials started",
+      description: "Tracks content creators who discover the platform, start a trial, and become customer accounts.",
+      fakeData: "68% completed profile · 51% connected portfolio · 37% added pricing",
+      next: "Activation Agent"
+    },
+    {
+      name: "Activation Agent",
+      state: "active",
+      metric: "146 activated",
+      description: "Guides new creators to add preferences, review their first AI-generated workflow, and approve their first action.",
+      fakeData: "4.2 min setup time · 73 first approvals today",
+      next: "Usage Monitor"
+    },
+    {
+      name: "Usage Monitor",
+      state: "active",
+      metric: "4.8k AI tasks",
+      description: "Measures how customers use approvals, projects, agent traces, reminders, research, scripts, and website updates.",
+      fakeData: "921 approvals · 376 projects · 6.4h saved per creator weekly",
+      next: "Customer Health Agent"
+    },
+    {
+      name: "Customer Health Agent",
+      state: "warning",
+      metric: "9 creators at risk",
+      description: "Detects customers whose usage is dying down, then prepares follow-up messages, support nudges, and reactivation steps.",
+      fakeData: "6 inactive trials · 3 low-usage subscribers · 5 follow-ups drafted",
+      next: "Retention Agent"
+    },
+    {
+      name: "Retention Agent",
+      state: "idle",
+      metric: "84 paying users",
+      description: "Suggests lifecycle emails, product education, and win-back offers to keep creators subscribed.",
+      fakeData: "66% trial-to-paid · SGD 2.9k MRR · +24% MoM",
+      next: "Owner Review"
+    }
+  ]
+};

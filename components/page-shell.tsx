@@ -9,11 +9,13 @@ import { UserMenu } from "@/components/user-menu";
 export function PageShell({
   title,
   description,
-  children
+  children,
+  hideNavigation = false
 }: {
   title?: string;
   description?: string;
   children: ReactNode;
+  hideNavigation?: boolean;
 }) {
   return (
     <div className="shell">
@@ -31,7 +33,7 @@ export function PageShell({
             </Link>
           </div>
 
-          <TopNavigation />
+          {hideNavigation ? null : <TopNavigation />}
 
           <div className="flex items-center gap-3">
             <UserMenu />
